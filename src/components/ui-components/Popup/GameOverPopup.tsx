@@ -30,7 +30,7 @@ const GameOverPopup : React.FC<GameOverPopupProps> = (props) => {
             label: 'Share Results',
             onClick: () => {
                 copyToClipboard(clipboardResults);
-                addToast('Wordle Mosaic copied to clipboard.' , 'success', 'm')
+                addToast('Mosaic copied to clipboard.' , 'success', 'm')
             }
         }
     ];

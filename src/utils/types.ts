@@ -132,7 +132,7 @@ export const difficultyConfig: Record<DifficultyLevel, DifficultyLevelConfig > =
     hell: {
         features: ['countDown', 'timer', 'flyingTiles', 'pulsingEffect', 'blurredTiles', 'giveUpButton'],
         allowedTileColors: [TileStatus.PRESENT, TileStatus.EMPTY, TileStatus.CORRECT],
-        timeLimit: getInMilliSeconds(30),
+        timeLimit: getInMilliSeconds(10),
         timerWarningStartFrom : getInMilliSeconds( 30),
         countDownStartFrom : getInMilliSeconds(10),
         giveUpButtonAppearFrom : getInMilliSeconds( 10),

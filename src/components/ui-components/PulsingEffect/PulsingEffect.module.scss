@@ -21,3 +21,9 @@
   animation: pulse 1s infinite;
   z-index: 500;
 }
+
+@media (max-width: 480px) {
+  .pulsing-effect {
+   width: 100%;
+  }
+}

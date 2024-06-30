@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
         <Head>
-            <title>Wordle</title>
+            <title>Hurdle</title>
         </Head>
         <Game/>
     </>

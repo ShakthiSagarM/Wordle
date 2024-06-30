@@ -9,7 +9,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    width: 30%;
+    max-width: 50%;
     max-height: 90vh;
     overflow: hidden   ;
     text-align: center;
@@ -154,4 +155,54 @@
     cursor: pointer;
     position: relative;
     outline: none;
+}
+
+@media (max-width: 850px) {
+    .settings-modal {
+        max-width: 50%;
+        width: 50%;
+        padding: 30px;
+    }
+
+    .settings-modal-title {
+        font-size: 1.5rem;
+    }
+
+    .setting-name {
+        font-size: 1.2rem;
+    }
+
+    .setting-input-dropdown,
+    .setting-input-checkbox {
+        font-size: 1.2rem;
+    }
+
+    .settings-modal-button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .settings-modal {
+        max-width: 70%;
+        width: 70%;
+        padding: 20px;
+    }
+
+    .settings-modal-title {
+        font-size: 1.2rem;
+    }
+
+    .setting-name {
+        font-size: 1rem;
+    }
+
+    .setting-input-dropdown,
+    .setting-input-checkbox {
+        font-size: 1rem;
+    }
+
+    .settings-modal-button {
+        font-size: 1rem;
+    }
 }

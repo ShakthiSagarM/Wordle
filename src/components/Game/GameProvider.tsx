@@ -147,7 +147,7 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             });
         });
         setKeyBoardData(newKeysData);
-    }, [board, keyBoardData]);
+    }, [board]);
 
     const handleBoardKeyPress = (event : React.KeyboardEvent) => {
         if (currentGameStatus === GameStatus.Started){

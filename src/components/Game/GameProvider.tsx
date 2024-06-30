@@ -18,7 +18,7 @@ interface GameContextProps {
     targetWord: string;
 
     board: { letter: string, status: string }[][];
-    handleBoardKeyPress: (event : React.KeyboardEvent ) => void;
+    handleBoardKeyPress: (event : React.KeyboardEvent<HTMLInputElement> ) => void;
 
     keyBoardData: Record<string, string>;
 

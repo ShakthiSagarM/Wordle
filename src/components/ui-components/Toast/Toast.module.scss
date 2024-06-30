@@ -1,0 +1,63 @@
+.toast {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+    &-success {
+        background-color: green;
+    }
+
+    &-error {
+        background-color: red;
+    }
+
+    &-info {
+        background-color: dodgerblue;
+    }
+
+    &-warning {
+        background-color: orange;
+    }
+
+    &-s {
+        font-size: 12px;
+    }
+
+    &-m {
+        font-size: 16px;
+    }
+
+    &-l {
+        font-size: 20px;
+    }
+}
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast-close-button {
+    background: none;
+    border: none;
+    color: #fff;
+    left: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+
+.close-icon {
+    color: white;
+    fill : white;
+}

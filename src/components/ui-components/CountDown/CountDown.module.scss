@@ -1,0 +1,25 @@
+@keyframes move {
+  0% {
+    transform: translate(var(--spawn-pos-x), var(--spawn-pos-y));
+  }
+  50% {
+    transform: translate(0, 0) scale(4);
+  }
+  100% {
+    transform: translate(var(--despawn-pos-x), var(--despawn-pos-y));
+  }
+}
+
+.countdown-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+}
+
+.countdown-text {
+  font-size: 5rem;
+  color: red;
+  animation: move 1s ease-in-out infinite; /* Adjusted animation duration */
+}

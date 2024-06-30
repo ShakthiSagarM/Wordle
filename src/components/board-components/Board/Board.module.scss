@@ -1,0 +1,11 @@
+.board {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 0.5rem;
+    padding: 1.5rem;
+}
+
+.board:focus-visible {
+    outline: none;
+}
+

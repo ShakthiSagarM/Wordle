@@ -51,7 +51,7 @@ const WordleTitle = () => {
     }
     return (
         <div className={styles['title-row']}>
-            <Row rowIndex={0} rowData={rowData} animated={true} columnCount={rowData.length} isBoardRow={false}/>
+            <Row rowIndex={0} rowData={rowData} columnCount={rowData.length} isBoardRow={false}/>
 
         </div>
     )

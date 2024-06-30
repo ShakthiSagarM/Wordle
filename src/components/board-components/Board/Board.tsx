@@ -12,6 +12,14 @@ const Board : React.FC<BoardProps> = (props) => {
 
     const inputRef = React.useRef<HTMLInputElement | null>(null);
 
+    const handleBoardTouch = () => {
+        if (inputRef.current) {
+            if ("focus" in inputRef.current) {
+                inputRef.current.focus();
+            }
+        }
+    };
+
     React.useEffect(() => {
         if (inputRef.current) {
             if ("focus" in inputRef.current) {
@@ -20,8 +28,9 @@ const Board : React.FC<BoardProps> = (props) => {
         }
     }, []);
 
+
     return(
-        <div className={styles['board']} >
+        <div className={styles['board']} onTouchStart={handleBoardTouch} onTouchEnd={handleBoardTouch} >
             <input
                 ref={inputRef}
                 type="text"

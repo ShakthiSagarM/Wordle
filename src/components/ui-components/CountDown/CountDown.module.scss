@@ -21,5 +21,21 @@
 .countdown-text {
   font-size: 5rem;
   color: red;
-  animation: move 1s ease-in-out infinite; /* Adjusted animation duration */
+  animation: move 1s ease-in-out infinite;
 }
+
+
+@media (max-width: 850px) {
+  .countdown-text{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-text{
+    font-size: 1rem;
+  }
+}
+
+
+

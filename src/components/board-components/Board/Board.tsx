@@ -28,6 +28,7 @@ const Board : React.FC<BoardProps> = (props) => {
                 autoComplete="off"
                 tabIndex={0}
                 className={styles['hidden-input']}
+                inputMode={"text"}
                 onKeyDown={handleBoardKeyPress}
             />
             {board.map((row, rowIndex) => (

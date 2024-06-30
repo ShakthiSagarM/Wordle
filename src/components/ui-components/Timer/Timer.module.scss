@@ -1,25 +1,25 @@
 .timer {
-    font-size: 2rem;
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    padding: 1rem;
-    &-warning {
-        color: red;
-        animation: pulse 1s infinite;
-    }
+  font-size: 2rem;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  padding: 1rem;
+  &-warning {
+    color: red;
+    animation: pulse 1s infinite;
+  }
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -24,18 +24,14 @@
   animation: move 1s ease-in-out infinite;
 }
 
-
 @media (max-width: 850px) {
-  .countdown-text{
+  .countdown-text {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .countdown-text{
+  .countdown-text {
     font-size: 1rem;
   }
 }
-
-
-

@@ -1,100 +1,100 @@
 /* Base styles for larger screens */
-.game{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: normal;
-    height: 100%;
-    padding: 4rem;
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: normal;
+  height: 100%;
+  padding: 4rem;
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--background-color);
 }
 
-.title-row{
-    padding: 2rem;
+.title-row {
+  padding: 2rem;
 }
 
-.settings-button{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    border: none;
-    align-items: center;
-    width: 3rem;
-    height: 3rem;
-    top: 6px;
-    left: 6px;
-    background: none;
-    border-radius: 50%;
-    padding: 0.5rem;
-    cursor: pointer;
+.settings-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  top: 6px;
+  left: 6px;
+  background: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
 }
 
-.settings-icon{
-    filter: var(--icon-color);
-    width: 2rem;
-    height: 2rem;
+.settings-icon {
+  filter: var(--icon-color);
+  width: 2rem;
+  height: 2rem;
 }
 
 @media (max-width: 850px) {
-    .game {
-    }
+  .game {
+  }
 
-    .title-row {
-        padding: 1rem;
-        font-size: 1.2rem;
-    }
+  .title-row {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
 
-    .settings-button {
-        width: 2.5rem;
-        height: 2.5rem;
-        top: 4px;
-        left: 4px;
-    }
+  .settings-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 4px;
+    left: 4px;
+  }
 
-    .settings-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
+  .settings-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 .hidden-input {
-    position: absolute;
-    opacity: 0;
-    height: 0;
-    width: 0;
-    border: none;
-    outline: none;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  border: none;
+  outline: none;
 }
 
 @media (max-width: 480px) {
-    .game {
-    }
+  .game {
+  }
 
-    .title-row {
-        scale: 0.8;
-        padding: 0.5rem;
-        font-size: 1rem;
-    }
+  .title-row {
+    scale: 0.8;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
 
-    .settings-button {
-        width: 2rem ;
-        height: 2rem;
-        top: 1rem;
-        left: 1rem;
-    }
+  .settings-button {
+    width: 2rem;
+    height: 2rem;
+    top: 1rem;
+    left: 1rem;
+  }
 
-    .settings-icon {
-        scale: 1.5;
-        width: 2rem;
-        height: 2rem;
-    }
+  .settings-icon {
+    scale: 1.5;
+    width: 2rem;
+    height: 2rem;
+  }
 }

@@ -1,0 +1,8 @@
+.yarn
+.next
+.npmrc
+.nvmrc
+.dockerignore
+dist
+node_modules
+src/network/index.types.ts

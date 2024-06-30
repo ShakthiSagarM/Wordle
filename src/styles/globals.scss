@@ -4,32 +4,27 @@
   --text-color-light: black;
   --icon-color-light: invert(100%) sepia(0%) saturate(7500%) hue-rotate(206deg) brightness(102%) contrast(102%);
   --icon-background-light: lightgrey;
-  --backdrop-color-light : rgba(255, 255, 255, 0.5);
-
+  --backdrop-color-light: rgba(255, 255, 255, 0.5);
 
   /* Dark theme variables */
   --background-dark: black;
   --text-color-dark: white;
   --icon-color-dark: invert(0%) sepia(93%) saturate(23%) hue-rotate(84deg) brightness(92%);
   --icon-background-dark: dimgrey;
-  --backdrop-color-dark : rgba(93, 93, 93, 0.5);
-
+  --backdrop-color-dark: rgba(93, 93, 93, 0.5);
 
   /* Common variables */
   --button-color: green;
-  --button-text-color : white;
-  --box-shadow :  0 0 20px rgba(0, 0, 0, 0.5);
+  --button-text-color: white;
+  --box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
-
-  --spawn-pos-x : 75vw;
+  --spawn-pos-x: 75vw;
   --spawn-pos-y: 75vh;
-  --despawn-pos-x : -75vw;
+  --despawn-pos-x: -75vw;
   --despawn-pos-y: -75vh;
-
 }
 
-
-body{
+body {
   margin: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -39,7 +34,7 @@ body{
   --text-color: var(--text-color-light);
   --icon-color: var(--icon-color-light);
   --icon-background: var(--icon-background-light);
-  --backdrop-color : var(--backdrop-color-light)
+  --backdrop-color: var(--backdrop-color-light);
 }
 
 .dark-theme {
@@ -47,6 +42,5 @@ body{
   --text-color: var(--text-color-dark);
   --icon-color: var(--icon-color-dark);
   --icon-background: var(--icon-background-dark);
-  --backdrop-color : var(--backdrop-color-dark)
-
+  --backdrop-color: var(--backdrop-color-dark);
 }

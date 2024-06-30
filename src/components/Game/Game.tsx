@@ -28,6 +28,7 @@ const Game : React.FC<GameProps> = (props) => {
             }
         }
     }, []);
+
     return(
         <div className={styles['main-container']}>
             <TopNavBar>

@@ -9,3 +9,12 @@
     outline: none;
 }
 
+
+.hidden-input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    border: none;
+    outline: none;
+}

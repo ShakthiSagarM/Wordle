@@ -10,17 +10,26 @@ interface BoardProps {}
 const Board : React.FC<BoardProps> = (props) => {
     const {board, handleBoardKeyPress } = useGame();
 
-    const divRef = React.useRef<HTMLDivElement | null>(null);
+    const inputRef = React.useRef<HTMLInputElement | null>(null);
+
     React.useEffect(() => {
-        if (divRef.current) {
-            if ("focus" in divRef.current) {
-                divRef.current.focus();
+        if (inputRef.current) {
+            if ("focus" in inputRef.current) {
+                inputRef.current.focus();
             }
         }
-    }, [board]);
+    }, []);
 
     return(
-        <div className={styles['board']} tabIndex={0}  ref={divRef} onKeyDown={handleBoardKeyPress}>
+        <div className={styles['board']} >
+            <input
+                ref={inputRef}
+                type="text"
+                autoComplete="off"
+                tabIndex={0}
+                className={styles['hidden-input']}
+                onKeyDown={handleBoardKeyPress}
+            />
             {board.map((row, rowIndex) => (
                 <Row key={rowIndex} rowIndex={rowIndex} rowData={row}/>
             ))}

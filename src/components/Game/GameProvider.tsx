@@ -149,7 +149,7 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setKeyBoardData(newKeysData);
     }, [board]);
 
-    const handleBoardKeyPress = (event : React.KeyboardEvent) => {
+    const handleBoardKeyPress = (event : React.KeyboardEvent<HTMLInputElement>) => {
         if (currentGameStatus === GameStatus.Started){
             if (event.key >= 'a' && event.key <= 'z') {
                 if (currCol < 5) {

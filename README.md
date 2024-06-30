@@ -1,1 +1,1 @@
-# Wordle
+# Hurdle

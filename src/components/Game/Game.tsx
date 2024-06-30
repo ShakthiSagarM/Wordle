@@ -18,16 +18,6 @@ interface GameProps {}
 
 const Game : React.FC<GameProps> = (props) => {
     const {openSettings} = useSettings();
-    const {handleBoardKeyPress} = useGame();
-    const inputRef = React.useRef<HTMLInputElement | null>(null);
-
-    React.useEffect(() => {
-        if (inputRef.current) {
-            if ("focus" in inputRef.current) {
-                inputRef.current.focus();
-            }
-        }
-    }, []);
 
     return(
         <div className={styles['main-container']}>
@@ -38,14 +28,6 @@ const Game : React.FC<GameProps> = (props) => {
                 <HurdleTitle/>
             </TopNavBar>
             <div className={styles['game']}>
-                <input
-                    ref={inputRef}
-                    type="text"
-                    autoComplete="off"
-                    tabIndex={0}
-                    className={styles['hidden-input']}
-                    onKeyDown={handleBoardKeyPress}
-                />
                 <Timer/>
                 <Board/>
                 <GiveUpButton/>

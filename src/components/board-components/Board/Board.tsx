@@ -30,7 +30,7 @@ const Board : React.FC<BoardProps> = (props) => {
 
 
     return(
-        <div className={styles['board']} onTouchStart={handleBoardTouch} onTouchEnd={handleBoardTouch} >
+        <div className={styles['board']} onClick={handleBoardTouch} >
             <input
                 ref={inputRef}
                 type="text"
@@ -38,7 +38,7 @@ const Board : React.FC<BoardProps> = (props) => {
                 tabIndex={0}
                 className={styles['hidden-input']}
                 inputMode={"text"}
-                onKeyDown={handleBoardKeyPress}
+                onKeyPress={handleBoardKeyPress}
             />
             {board.map((row, rowIndex) => (
                 <Row key={rowIndex} rowIndex={rowIndex} rowData={row}/>

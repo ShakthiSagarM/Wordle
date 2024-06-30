@@ -150,22 +150,23 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }, [board]);
 
     const handleBoardKeyPress = (event : React.KeyboardEvent<HTMLInputElement>) => {
+        const key = event.key;
         if (currentGameStatus === GameStatus.Started){
-            if (event.key >= 'a' && event.key <= 'z') {
+            if (key >= 'a' && key <= 'z') {
                 if (currCol < 5) {
                     const newBoard = [...board];
-                    newBoard[currRow][currCol] = { letter: event.key, status: 'empty' };
+                    newBoard[currRow][currCol] = { letter: key, status: 'empty' };
                     setBoard(newBoard);
                     setCurrCol(currCol + 1);
                 }
-            } else if (event.key === 'Backspace') {
+            } else if (key === 'Backspace') {
                 if (currCol> 0 ){
                     const newBoard = [...board];
                     newBoard[currRow][currCol - 1] = { letter: '', status: TileStatus.EMPTY };
                     setBoard(newBoard);
                     setCurrCol(currCol - 1);
                 }
-            } else if (event.key === 'Enter'){
+            } else if (key === 'Enter'){
                 if (currCol === 5) {
                     const newBoard = [...board];
                     const guess = newBoard[currRow].map(tile => tile.letter).join('');

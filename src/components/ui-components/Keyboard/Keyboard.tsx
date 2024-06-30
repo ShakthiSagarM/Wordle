@@ -25,7 +25,7 @@ const Keyboard: React.FC<KeyboardProps> = (props) => {
             {rows.map((rowKeys, index) => (
                 <div key={index} className={styles[`keyboard-row-${index}`]}>
                     {rowKeys.map(( key, index) => (
-                        <Tile key={index} letter={key} status={keyBoardData[key]} />
+                        <Tile key={index} letter={key} status={keyBoardData[key]} isBoardTile={false}/>
                     ))}
                 </div>
             ))}

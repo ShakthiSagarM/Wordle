@@ -35,7 +35,6 @@ const GameOverPopup : React.FC<GameOverPopupProps> = (props) => {
             rowIndex={0}
             rowData={targetWord.split('').map((letter, index) => ({ letter, status: 'correct' }))}
             columnCount={targetWord.length}
-            floating={true}
             isBoardRow={false}
         />
     )

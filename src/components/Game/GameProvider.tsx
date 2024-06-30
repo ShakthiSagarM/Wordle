@@ -71,7 +71,7 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [isGameOver, setIsGameOver] = React.useState<boolean>(false);
 
     // keyboard
-    const [keyBoardData, setKeyBoardData] = React.useState<Record<string, string>>(getEmptyKeyBoard());
+    const [keyBoardData, setKeyBoardData] = React.useState<Record<string, TileStatus>>(getEmptyKeyBoard());
 
     // timer
     const [timeLimit, setTimeLimit] = React.useState<number>(config.timeLimit)
@@ -122,11 +122,6 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setTimeLimit(config.timeLimit);
         resetGame();
     }, [config]);
-
-    React.useEffect(()=>{
-        console.log(featureState);
-    },[featureState])
-
 
     const resetGame = () => {
         setTargetWord(getTargetWord());
@@ -215,7 +210,6 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             keyBoardData,
             featureState,
             currentGameStatus,
-            updateCurrentGameStatus,
             isGameOver,
             setIsGameOver,
             timeLeft,

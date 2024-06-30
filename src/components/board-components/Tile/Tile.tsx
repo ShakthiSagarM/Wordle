@@ -1,4 +1,4 @@
-import React from "react";
+import React, {CSSProperties} from "react";
 import styles from "./Tile.module.scss";
 import { useSettings } from "@/components/Settings/SettingsProvider";
 import {useGame} from "@/components/Game/GameProvider";
@@ -32,7 +32,7 @@ const Tile: React.FC<TileProps> = (props) => {
     React.useEffect(() => {
         if (enableFlying) {
 
-            const getRandomPosition = () => {
+            const getRandomPosition = () : [number,number] | undefined => {
                 const h = window.innerHeight - 50;
                 const w = window.innerWidth - 50;
                 const nh = Math.floor(Math.random() * h);
@@ -41,7 +41,7 @@ const Tile: React.FC<TileProps> = (props) => {
             };
 
             const moveTile = () => {
-                setPosition(getRandomPosition());
+                setPosition(getRandomPosition() || undefined);
             };
 
             moveTile(); // Initial move
@@ -52,19 +52,19 @@ const Tile: React.FC<TileProps> = (props) => {
     }, [enableFlying]);
 
 
-    const getTileColorByStatus = (status : string) => {
-        if (config.allowedTileColors.includes(status as TileStatus)){
+    const getTileColorByStatus = (status : TileStatus) => {
+        if (config.allowedTileColors.includes(status)){
             return tileStatusToColorMap[status]
         }
         return tileStatusToColorMap[TileStatus.EMPTY];
     }
 
 
-    const bgColorStyle = {
-        backgroundColor: getTileColorByStatus(status),
+    const bgColorStyle : CSSProperties = {
+        backgroundColor: getTileColorByStatus(status as TileStatus),
     };
 
-    const floatingStyle = enableFloating
+    const floatingStyle : CSSProperties = enableFloating
         ? {
             animationDelay: `${index * 0.1}s`,
             animationName: styles['grow'],
@@ -74,7 +74,7 @@ const Tile: React.FC<TileProps> = (props) => {
         }
         : {};
 
-    const flyingStyle = enableFlying && position && position[0] && position[1] ? {
+    const flyingStyle : CSSProperties = enableFlying && position && position[0] && position[1] ? {
             position : 'absolute',
             top: `${position[0]}px`,
             left: `${position[1]}px`,
@@ -83,7 +83,7 @@ const Tile: React.FC<TileProps> = (props) => {
         }
         : {};
 
-    const  [blurringStyle, setBlurringStyle] = React.useState({});
+    const  [blurringStyle, setBlurringStyle] = React.useState<CSSProperties>({});
 
     React.useEffect(() => {
         if (enableBlurring) {

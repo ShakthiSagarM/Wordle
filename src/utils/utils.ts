@@ -33,8 +33,8 @@ export const getEmptyBoard = () => {
    return Array(6).fill('').map(() => Array(5).fill({ letter: '', status: TileStatus.EMPTY }));
 }
 
-export const getEmptyKeyBoard = () => {
-    return Array.from({length: 26}, (_, i) => String.fromCharCode(97 + i).toLowerCase()).reduce((acc, key) => {
+export const getEmptyKeyBoard = () : Record<string, TileStatus> => {
+    return Array.from({length: 26}, (_, i) => String.fromCharCode(97 + i).toLowerCase()).reduce((acc : Record<string, TileStatus>, key) => {
         acc[key] = TileStatus.EMPTY;
         return acc;
     }, {})

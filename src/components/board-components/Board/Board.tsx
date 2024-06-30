@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Board.module.scss";
 
-import Row from "@/components/board-components/Row/Row.tsx";
+import Row from "@/components/board-components/Row/Row";
 import {useGame} from "@/components/Game/GameProvider";
 
 interface BoardProps {}
@@ -10,10 +10,12 @@ interface BoardProps {}
 const Board : React.FC<BoardProps> = (props) => {
     const {board, handleBoardKeyPress } = useGame();
 
-    const divRef = React.useRef(null);
+    const divRef = React.useRef<HTMLDivElement | null>(null);
     React.useEffect(() => {
         if (divRef.current) {
-            divRef.current.focus();
+            if ("focus" in divRef.current) {
+                divRef.current.focus();
+            }
         }
     }, [board]);
 

@@ -62,15 +62,6 @@ const Settings: React.FC<SettingsProps> = (props) => {
                             ))}
                         </select>
                     </div>
-                    <div className={styles['setting']}>
-                        <div className={styles['setting-name']}>Turn on animation?</div>
-                        <input
-                            type="checkbox"
-                            className={styles['setting-input-checkbox']}
-                            checked={draftSettings.animation}
-                            onChange={(e) => handleChange(e, 'animation')}
-                        />
-                    </div>
                 </div>
                 <div className={styles['settings-modal-button-container']}>
                     <button className={styles['settings-modal-button']} onClick={handleSave}>Save</button>

@@ -5,14 +5,19 @@ import Popup from "@/components/ui-components/Popup/Popup";
 import {useToast} from "@/components/ui-components/Toast/ToastProvider";
 import Row from "@/components/board-components/Row/Row";
 import {GameStatus} from "@/utils/types";
+import {useSettings} from "@/components/Settings/SettingsProvider.tsx";
 
 interface GameOverPopupProps {}
 
 const GameOverPopup : React.FC<GameOverPopupProps> = (props) => {
     const {board, targetWord,isGameOver, currentGameStatus, resetGame} = useGame();
+    const {settings} = useSettings();
     const {addToast} = useToast();
-    const results = isGameOver ? getResult(board) : '';
+    const info = isGameOver ? getResult(board) : '';
     const message = (currentGameStatus === GameStatus.Won ? 'You won!' : currentGameStatus === GameStatus.Lost? 'You lost!' : 'Time up!') + ' The word was \n \n' ;
+
+    const clipboardResults = 'difficulty: ' + settings.difficulty + '\n\n' +
+        info + '\n\n';
 
     const popupButtons = [
         {
@@ -24,7 +29,7 @@ const GameOverPopup : React.FC<GameOverPopupProps> = (props) => {
         {
             label: 'Share Results',
             onClick: () => {
-                copyToClipboard(results);
+                copyToClipboard(clipboardResults);
                 addToast('Wordle Mosaic copied to clipboard.' , 'success', 'm')
             }
         }
@@ -46,10 +51,16 @@ const GameOverPopup : React.FC<GameOverPopupProps> = (props) => {
         </>
     );
 
+    const popupInfo = (
+        <>
+            {info}
+        </>
+    );
+
     return (
         <>
             {isGameOver && (
-                <Popup message={popupMessage} info={results} buttons={popupButtons} backdrop={true}/>
+                <Popup message={popupMessage} info={popupInfo} buttons={popupButtons} backdrop={true}/>
             )}
         </>
     );

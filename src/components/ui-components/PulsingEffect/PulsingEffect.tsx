@@ -3,9 +3,9 @@ import styles from "./PulsingEffect.module.scss";
 import {useGame} from "@/components/Game/GameProvider";
 
 const PulsingEffect: React.FC = () => {
-    const { config  ,featureState, timeLeft} = useGame();
+    const { config  ,featureState, timeLeft, isGameOver} = useGame();
 
-    if (!featureState.showPulsingEffect || timeLeft > config.pulsingEffectStartFrom || timeLeft <=0){
+    if (!featureState.showPulsingEffect || timeLeft > config.pulsingEffectStartFrom || timeLeft <=0 || isGameOver){
         return null;
     }
 

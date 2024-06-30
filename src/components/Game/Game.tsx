@@ -12,6 +12,7 @@ import {useGame} from "@/components/Game/GameProvider";
 import CountDown from "@/components/ui-components/CountDown/CountDown";
 import GiveUpButton from "@/components/ui-components/GiveUpButton/GiveUpButton";
 import PulsingEffect from "@/components/ui-components/PulsingEffect/PulsingEffect";
+import TopNavBar from "@/components/ui-components/TopNavBar/TopNavBar.tsx";
 
 interface GameProps {}
 
@@ -20,18 +21,20 @@ const Game : React.FC<GameProps> = (props) => {
 
     return(
         <div className={styles['main-container']}>
+            <TopNavBar>
+                <button className={styles['settings-button']} onClick={openSettings}>
+                    <SettingsIcon className={styles['settings-icon']}/>
+                </button>
+                <HurdleTitle/>
+            </TopNavBar>
             <div className={styles['game']}>
-                <WordleTitle/>
                 <Timer/>
-                <Board />
+                <Board/>
                 <GiveUpButton/>
                 <Keyboard/>
                 <GameOverPopup/>
                 <CountDown/>
                 <PulsingEffect/>
-                <button className={styles['settings-button']} onClick={openSettings}>
-                    <SettingsIcon className={styles['settings-icon']}/>
-                </button>
             </div>
         </div>
 
@@ -40,19 +43,18 @@ const Game : React.FC<GameProps> = (props) => {
 
 export default Game;
 
-const WordleTitle = () => {
+const HurdleTitle = () => {
 
     const {featureState} = useGame();
-    const wordle = 'wordle'.toString()
+    const wordle = 'hurdle'.toString()
     const rowData = wordle.split('').map((letter, index) => ({letter, status: 'correct'}));
 
-    if (!featureState.showWordleTitle){
+    if (!featureState.showHurdleTitle){
         return null;
     }
     return (
         <div className={styles['title-row']}>
-            <Row rowIndex={0} rowData={rowData} columnCount={rowData.length} isBoardRow={false}/>
-
+            <Row rowIndex={0} rowData={rowData} columnCount={rowData.length} isBoardRow={false} size={'s'}/>
         </div>
     )
 

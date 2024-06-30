@@ -43,12 +43,12 @@ export const getInMilliSeconds = (seconds : number) =>{
     return seconds * 1000;
 }
 
-export type Feature = 'countDown' | 'keyBoard' | 'wordleTitle' | 'timer' | 'flyingTiles' | 'giveUpButton' | 'pulsingEffect' | 'blurredTiles';
+export type Feature = 'countDown' | 'keyBoard' | 'hurdleTitle' | 'timer' | 'flyingTiles' | 'giveUpButton' | 'pulsingEffect' | 'blurredTiles';
 
 export type FeatureState = {
     showCountDown: boolean;
     showKeyBoard: boolean;
-    showWordleTitle: boolean;
+    showHurdleTitle: boolean;
     showTimer: boolean;
     isFlyingTiles: boolean;
     showGiveUpButton: boolean;
@@ -59,7 +59,7 @@ export type FeatureState = {
 export const featureStateKeys: Record<Feature, keyof FeatureState> = {
     countDown: 'showCountDown',
     keyBoard: 'showKeyBoard',
-    wordleTitle: 'showWordleTitle',
+    hurdleTitle: 'showHurdleTitle',
     timer: 'showTimer',
     flyingTiles: 'isFlyingTiles',
     giveUpButton: 'showGiveUpButton',
@@ -70,7 +70,7 @@ export const featureStateKeys: Record<Feature, keyof FeatureState> = {
 export const initialFeatureState: FeatureState = {
     showCountDown: false,
     showKeyBoard: false,
-    showWordleTitle: false,
+    showHurdleTitle: false,
     showTimer: false,
     isFlyingTiles: false,
     showGiveUpButton: false,
@@ -94,7 +94,7 @@ export type DifficultyLevelConfig = {
 
 export const difficultyConfig: Record<DifficultyLevel, DifficultyLevelConfig > = {
     easy: {
-        features: ['wordleTitle', 'keyBoard', 'giveUpButton'],
+        features: ['hurdleTitle', 'keyBoard', 'giveUpButton'],
         allowedTileColors: [TileStatus.PRESENT, TileStatus.ABSENT, TileStatus.EMPTY, TileStatus.CORRECT],
         timeLimit: getInMilliSeconds( 0), //no time limit
         timerWarningStartFrom : getInMilliSeconds( 0),
@@ -103,7 +103,7 @@ export const difficultyConfig: Record<DifficultyLevel, DifficultyLevelConfig > =
         pulsingEffectStartFrom : getInMilliSeconds(0),
     },
     normal: {
-        features: ['keyBoard', 'wordleTitle', 'timer','giveUpButton'],
+        features: ['keyBoard', 'hurdleTitle', 'timer','giveUpButton'],
         allowedTileColors: [TileStatus.PRESENT, TileStatus.ABSENT, TileStatus.EMPTY, TileStatus.CORRECT],
         timeLimit: getInMilliSeconds(180),
         timerWarningStartFrom : getInMilliSeconds( 30),
@@ -112,7 +112,7 @@ export const difficultyConfig: Record<DifficultyLevel, DifficultyLevelConfig > =
         pulsingEffectStartFrom : getInMilliSeconds(0),
     },
     hard: {
-        features: ['timer', 'wordleTitle', 'giveUpButton'],
+        features: ['hurdleTitle', 'timer', 'giveUpButton'],
         timeLimit: getInMilliSeconds(60),
         allowedTileColors: [TileStatus.PRESENT, TileStatus.EMPTY, TileStatus.CORRECT],
         timerWarningStartFrom : getInMilliSeconds( 15),
@@ -121,7 +121,7 @@ export const difficultyConfig: Record<DifficultyLevel, DifficultyLevelConfig > =
         pulsingEffectStartFrom : getInMilliSeconds(0),
     },
     nightmare:{
-        features: ['timer', 'giveUpButton', 'blurredTiles', 'pulsingEffect'],
+        features: ['hurdleTitle','timer', 'giveUpButton', 'blurredTiles', 'pulsingEffect'],
         allowedTileColors: [TileStatus.PRESENT, TileStatus.EMPTY, TileStatus.CORRECT],
         timeLimit: getInMilliSeconds(30),
         timerWarningStartFrom : getInMilliSeconds( 15),

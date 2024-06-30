@@ -89,7 +89,7 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         if (timeLeft <= 0 && timeLimit !== 0) {
             updateCurrentGameStatus(GameStatus.TimeUp);
         }
-    }, [timeLeft]);
+    }, [timeLeft, timeLimit]);
 
     React.useEffect(()=>{
         if(currentGameStatus === GameStatus.Won || currentGameStatus === GameStatus.TimeUp || currentGameStatus === GameStatus.Lost){
@@ -147,7 +147,7 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             });
         });
         setKeyBoardData(newKeysData);
-    }, [board]);
+    }, [board, keyBoardData]);
 
     const handleBoardKeyPress = (event : React.KeyboardEvent) => {
         if (currentGameStatus === GameStatus.Started){

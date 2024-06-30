@@ -20,7 +20,7 @@ const Timer: React.FC = () => {
             }, 1000);
             return () => clearInterval(interval);
         }
-    }, [timeLeft, isGameOver, setTimeLeft]);
+    }, [timeLeft, isGameOver, setTimeLeft, featureState.showTimer]);
 
     const formatTime = (ms: number) => {
         const totalSeconds = Math.floor(ms / 1000);

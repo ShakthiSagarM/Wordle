@@ -1,5 +1,5 @@
 .give-up-button{
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border: 0;
   color: var(--text-color);
@@ -13,15 +13,15 @@
 
 @keyframes grow {
   0%{
-    transform: scale(1);
+    transform: scale(0.9);
   }
 
   50%{
-    transform: scale(1.2);
+    transform: scale(1.0);
   }
 
   100%{
-    transform: scale(1);
+    transform: scale(0.9);
 
   }
 }

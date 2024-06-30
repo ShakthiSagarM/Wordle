@@ -41,5 +41,5 @@ export const getEmptyKeyBoard = () : Record<string, TileStatus> => {
 }
 
 export const getDefaultSettings = () : Settings => {
-    return { theme: 'dark', animation: true , difficulty : 'normal'}
+    return { theme: 'dark', animation: false , difficulty : 'normal'}
 }

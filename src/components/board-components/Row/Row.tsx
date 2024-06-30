@@ -10,12 +10,13 @@ interface RowProps {
     rowData: { letter: string, status: string }[];
     columnCount?: number;
     isBoardRow? : boolean;
+    size?: 's' | 'm' | 'l';
 }
 
 const Row: React.FC<RowProps> = (props) => {
     const {settings} = useSettings();
 
-    const { rowIndex, rowData, columnCount = 5  , isBoardRow = true} = props;
+    const { rowIndex, rowData, columnCount = 5  , isBoardRow = true ,size} = props;
 
     const gridStyle = { gridTemplateColumns: `repeat(${columnCount}, auto)` }
 
@@ -23,7 +24,7 @@ const Row: React.FC<RowProps> = (props) => {
         <div key={rowIndex} className={styles['row']} style={gridStyle}
         >
             {rowData.map((tile, colIndex) => (
-                <Tile key={colIndex} letter={tile.letter} status={tile.status} index={colIndex}  isBoardTile={isBoardRow}/>
+                <Tile key={colIndex} letter={tile.letter} status={tile.status} index={colIndex}  size={size} isBoardTile={isBoardRow}/>
             ))}
         </div>
     );

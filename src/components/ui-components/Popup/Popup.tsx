@@ -3,7 +3,7 @@ import styles from "./Popup.module.scss";
 
 interface PopupProps {
      message : JSX.Element;
-     info? : string;
+     info? : JSX.Element;
      buttons : {label: string, onClick: () => void}[];
      backdrop?: boolean;
 }

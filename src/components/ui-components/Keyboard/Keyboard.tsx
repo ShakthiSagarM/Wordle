@@ -2,11 +2,10 @@ import React from 'react';
 import Tile from '@/components/board-components/Tile/Tile.tsx';
 import styles from './Keyboard.module.scss';
 import { useGame } from '@/components/Game/GameProvider';
-import { useSettings } from '@/components/Settings/SettingsProvider';
 
 interface KeyboardProps {}
 
-const Keyboard: React.FC<KeyboardProps> = (props) => {
+const Keyboard: React.FC<KeyboardProps> = () => {
   const { keyBoardData, featureState } = useGame();
 
   const rowKeyValuesArray: { key: string; value: string }[][] = [

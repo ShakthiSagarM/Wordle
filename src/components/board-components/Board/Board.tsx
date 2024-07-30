@@ -20,7 +20,14 @@ const Board: React.FC<BoardProps> = () => {
   }, [board]);
 
   return (
-    <div className={styles['board']} tabIndex={0} ref={divRef} onKeyDown={handleBoardKeyPress}>
+    <div
+      className={styles['board']}
+      tabIndex={0}
+      ref={divRef}
+      onKeyDown={(event) => {
+        handleBoardKeyPress(event.key);
+      }}
+    >
       {board.map((row, rowIndex) => (
         <Row key={rowIndex} rowIndex={rowIndex} rowData={row} />
       ))}

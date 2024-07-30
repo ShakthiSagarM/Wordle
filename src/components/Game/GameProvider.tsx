@@ -20,7 +20,7 @@ interface GameContextProps {
   targetWord: string;
 
   board: { letter: string; status: string }[][];
-  handleBoardKeyPress: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleBoardKeyPress: (key: string) => void;
 
   keyBoardData: Record<string, string>;
 
@@ -152,8 +152,10 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setKeyBoardData(newKeysData);
   }, [board]);
 
-  const handleBoardKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const key = event.key;
+  const handleBoardKeyPress = (key: string) => {
+    if (key === '') {
+      return;
+    }
     if (currentGameStatus === GameStatus.Started) {
       if (key >= 'a' && key <= 'z') {
         if (currCol < 5) {

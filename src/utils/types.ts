@@ -45,7 +45,7 @@ export const getInMilliSeconds = (seconds: number) => {
 
 export type Feature =
   | 'countDown'
-  | 'keyBoard'
+  | 'keyBoardColors'
   | 'hurdleTitle'
   | 'timer'
   | 'flyingTiles'
@@ -55,7 +55,7 @@ export type Feature =
 
 export type FeatureState = {
   showCountDown: boolean;
-  showKeyBoard: boolean;
+  showKeyBoardColors: boolean;
   showHurdleTitle: boolean;
   showTimer: boolean;
   isFlyingTiles: boolean;
@@ -66,7 +66,7 @@ export type FeatureState = {
 
 export const featureStateKeys: Record<Feature, keyof FeatureState> = {
   countDown: 'showCountDown',
-  keyBoard: 'showKeyBoard',
+  keyBoardColors: 'showKeyBoardColors',
   hurdleTitle: 'showHurdleTitle',
   timer: 'showTimer',
   flyingTiles: 'isFlyingTiles',
@@ -77,7 +77,7 @@ export const featureStateKeys: Record<Feature, keyof FeatureState> = {
 
 export const initialFeatureState: FeatureState = {
   showCountDown: false,
-  showKeyBoard: false,
+  showKeyBoardColors: false,
   showHurdleTitle: false,
   showTimer: false,
   isFlyingTiles: false,
@@ -102,7 +102,7 @@ export type DifficultyLevelConfig = {
 
 export const difficultyConfig: Record<DifficultyLevel, DifficultyLevelConfig> = {
   easy: {
-    features: ['hurdleTitle', 'keyBoard', 'giveUpButton'],
+    features: ['hurdleTitle', 'keyBoardColors', 'giveUpButton'],
     allowedTileColors: [TileStatus.PRESENT, TileStatus.ABSENT, TileStatus.EMPTY, TileStatus.CORRECT],
     timeLimit: getInMilliSeconds(0), //no time limit
     timerWarningStartFrom: getInMilliSeconds(0),
@@ -111,7 +111,7 @@ export const difficultyConfig: Record<DifficultyLevel, DifficultyLevelConfig> = 
     pulsingEffectStartFrom: getInMilliSeconds(0),
   },
   normal: {
-    features: ['keyBoard', 'hurdleTitle', 'timer', 'giveUpButton'],
+    features: ['keyBoardColors', 'hurdleTitle', 'timer', 'giveUpButton'],
     allowedTileColors: [TileStatus.PRESENT, TileStatus.ABSENT, TileStatus.EMPTY, TileStatus.CORRECT],
     timeLimit: getInMilliSeconds(180),
     timerWarningStartFrom: getInMilliSeconds(30),

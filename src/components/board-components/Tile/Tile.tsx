@@ -6,18 +6,30 @@ import { TileStatus, tileStatusToColorMap } from '@/utils/types';
 
 interface TileProps {
   letter: string;
+  value?: string;
   status: string;
   size?: 's' | 'm' | 'l';
   index?: number;
-  isBoardTile: boolean;
+  isBoardTile?: boolean;
+  isKeyBoardTile?: boolean;
+  showColors?: boolean;
 }
 
 const Tile: React.FC<TileProps> = (props) => {
-  const { letter, status, size = 'm', index = 0, isBoardTile = true } = props;
+  const {
+    letter,
+    status,
+    size = 'm',
+    index = 0,
+    isBoardTile = true,
+    showColors = true,
+    isKeyBoardTile = false,
+    value,
+  } = props;
 
   const { settings } = useSettings();
 
-  const { config, featureState } = useGame();
+  const { config, featureState, handleBoardKeyPress } = useGame();
 
   const divRef = React.useRef(null);
 
@@ -57,9 +69,11 @@ const Tile: React.FC<TileProps> = (props) => {
     return tileStatusToColorMap[TileStatus.EMPTY];
   };
 
-  const bgColorStyle: CSSProperties = {
-    backgroundColor: getTileColorByStatus(status as TileStatus),
-  };
+  const bgColorStyle: CSSProperties = showColors
+    ? {
+        backgroundColor: getTileColorByStatus(status as TileStatus),
+      }
+    : { backgroundColor: getTileColorByStatus(TileStatus.EMPTY) };
 
   const floatingStyle: CSSProperties = enableFloating
     ? {
@@ -101,7 +115,14 @@ const Tile: React.FC<TileProps> = (props) => {
   const style = { ...bgColorStyle, ...flyingStyle, ...floatingStyle, ...blurringStyle };
 
   return (
-    <div className={`${styles.tile} ${styles[`tile-${size}`]}`} ref={divRef} style={style}>
+    <div
+      className={`${styles.tile} ${styles[`tile-${size}`]}`}
+      ref={divRef}
+      style={style}
+      onClick={() => {
+        handleBoardKeyPress(value || '');
+      }}
+    >
       {letter.toUpperCase()}
     </div>
   );
